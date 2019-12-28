@@ -1,0 +1,46 @@
+SCREEN 12
+RANDOMIZE TIMER
+DRAW "U25"
+1 IF INKEY$ = CHR$(27) THEN GOTO 2
+
+LET y = INT(RND * 4)
+LET X = INT(RND * 15)
+LET z = INT(RND * 3)
+IF z = 1 THEN GOTO 10
+IF z = 2 THEN GOTO 20
+IF z = 3 THEN 30
+COLOR X
+10 IF y = 0 THEN DRAW "M-1,-1"
+IF y = 1 THEN DRAW "M-1,1"
+IF y = 2 THEN DRAW "M+1,-1"
+IF y = 3 THEN DRAW "M+1,1"
+20 LET ze = INT(RND * 3)
+IF ze = 1 THEN DRAW "C14"
+IF ze = 2 THEN DRAW "C2"
+IF ze = 0 THEN DRAW "C3"
+LET yp = INT(RND * 4)
+LET Xp = INT(RND * 15)
+LET zp = INT(RND * 2)
+IF zp = 1 THEN GOTO 11
+IF zp = 2 THEN GOTO 21
+COLOR Xp
+11 IF yp = 0 THEN DRAW "M-1,+1"
+IF yp = 1 THEN DRAW "M+1,-1"
+IF yp = 2 THEN DRAW "M-1, +1"
+IF yp = 3 THEN DRAW "M+1,-1"
+21 LET zep = INT(RND * 3)
+IF zep = 1 THEN DRAW "C14"
+IF zep = 2 THEN DRAW "C3"
+IF zep = 0 THEN DRAW "C2"
+30
+LET xy = INT(RND * 15)
+
+IF xy = 0 THEN DRAW "M+2,2"
+IF xy = 1 THEN DRAW "M-2,-2"
+IF xy = 2 THEN DRAW "M-2,-2"
+IF xy = 3 THEN DRAW "M+2,2"
+
+
+GOTO 1
+2 END
+
